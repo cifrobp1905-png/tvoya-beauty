@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TVOYA BEAUTY — Салон краси у Черкасах</title>
+  <link rel="icon" type="image/png" href="./assets/ig-avatar.png" />
+  <meta
+    name="description"
+    content="TVOYA BEAUTY — салон краси у Черкасах (ПЗР, вул. Віталія Вергая). Повний прайс процедур та запис за телефоном +38 (077) 221-00-01."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Desktop Cursor Effects Layer -->
+  <div class="cursor-layer" id="cursorLayer" aria-hidden="true">
+    <div class="cursor-aura" id="cursorAura"></div>
+    <div class="cursor-ring" id="cursorRing">
+      <span class="cursor-ring__label" id="cursorLabel"></span>
+    </div>
+    <div class="cursor-sparks" id="cursorSparks"></div>
+  </div>
+
+  <!-- Side Margins Ambient Silk Curves & Floating Orbs (Desktop >= 1220px) -->
+  <div class="side-ambience" id="sideAmbience" aria-hidden="true">
+    <svg class="side-curve side-curve--left" viewBox="0 0 120 900" fill="none" preserveAspectRatio="none">
+      <path
+        class="js-scroll-path"
+        d="M28,0 C76,160 8,310 56,470 C98,610 18,755 62,900"
+        stroke="url(#sideGradLeft)"
+        stroke-width="1.2"
+        stroke-linecap="round"
+      />
+      <defs>
+        <linearGradient id="sideGradLeft" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#EADAD3" stop-opacity="0.15" />
+          <stop offset="50%" stop-color="#9B7A72" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#EADAD3" stop-opacity="0.15" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <svg class="side-curve side-curve--right" viewBox="0 0 120 900" fill="none" preserveAspectRatio="none">
+      <path
+        class="js-scroll-path"
+        d="M92,0 C42,155 108,325 58,480 C16,615 96,760 54,900"
+        stroke="url(#sideGradRight)"
+        stroke-width="1.2"
+        stroke-linecap="round"
+      />
+      <defs>
+        <linearGradient id="sideGradRight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#EADAD3" stop-opacity="0.15" />
+          <stop offset="50%" stop-color="#9B7A72" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#EADAD3" stop-opacity="0.15" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <span class="side-orb side-orb--1 js-side-float" data-depth="12"></span>
+    <span class="side-orb side-orb--2 js-side-float" data-depth="-16"></span>
+    <span class="side-orb side-orb--3 js-side-float" data-depth="14"></span>
+    <span class="side-orb side-orb--4 js-side-float" data-depth="-12"></span>
+
+    <span class="side-star side-star--1 js-side-float" data-depth="18">✦</span>
+    <span class="side-star side-star--2 js-side-float" data-depth="-14">✦</span>
+    <span class="side-star side-star--3 js-side-float" data-depth="15">✦</span>
+    <span class="side-star side-star--4 js-side-float" data-depth="-18">✦</span>
+  </div>
+
+  <!-- Left Interactive Section Rail -->
+  <aside class="side-rail side-rail--left" aria-label="Швидка навігація по розділах">
+    <span class="side-rail__star" id="scrollStar" aria-hidden="true">✦</span>
+    <nav class="side-dots" id="sideDots">
+      <a class="side-dot is-active" href="#top" data-section="top">
+        <span class="side-dot__pill"></span>
+        <span class="side-dot__label">Початок</span>
+      </a>
+      <a class="side-dot" href="#works" data-section="works">
+        <span class="side-dot__pill"></span>
+        <span class="side-dot__label">Роботи</span>
+      </a>
+      <a class="side-dot" href="#price" data-section="price">
+        <span class="side-dot__pill"></span>
+        <span class="side-dot__label">Прайс</span>
+      </a>
+      <a class="side-dot" href="#care" data-section="care">
+        <span class="side-dot__pill"></span>
+        <span class="side-dot__label">Про простір</span>
+      </a>
+      <a class="side-dot" href="#contacts" data-section="contacts">
+        <span class="side-dot__pill"></span>
+        <span class="side-dot__label">Контакти</span>
+      </a>
+    </nav>
+    <span class="side-rail__line" aria-hidden="true"></span>
+  </aside>
+
+  <!-- Right Interactive Marquee & Inspiration "Zest" -->
+  <aside class="side-rail side-rail--right" aria-label="Атмосфера салону">
+    <div class="side-marquee" aria-hidden="true">
+      <div class="side-marquee__track">
+        <span>НАДИХАYOU · TVOYA BEAUTY · ЧЕРКАСИ · ТУРБОТА ·</span>
+        <span>НАДИХАYOU · TVOYA BEAUTY · ЧЕРКАСИ · ТУРБОТА ·</span>
+      </div>
+    </div>
+
+    <div class="inspiration-widget" id="inspirationWidget">
+      <button
+        class="inspiration-trigger"
+        id="inspirationTrigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="inspirationCard"
+      >
+        <span class="inspiration-trigger__star">✦</span>
+        <span class="inspiration-trigger__text">Настрій</span>
+      </button>
+      <div class="inspiration-card" id="inspirationCard" role="region" aria-label="Послання дня">
+        <div class="inspiration-card__head">
+          <span>✦ Для тебе сьогодні</span>
+          <button class="inspiration-card__close" id="inspirationClose" type="button" aria-label="Закрити">×</button>
+        </div>
+        <p class="inspiration-card__quote" id="inspirationQuote"></p>
+        <button class="inspiration-card__next" id="inspirationNext" type="button">Інше послання ✦</button>
+      </div>
+    </div>
+  </aside>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top">
+        <img class="brand__avatar" src="./assets/ig-avatar.png" alt="TVOYA BEAUTY" />
+        <span class="brand__name">TVOYA BEAUTY</span>
+      </a>
+
+      <nav class="nav" aria-label="Навігація">
+        <a href="#works">Роботи</a>
+        <a href="#price">Прайс</a>
+        <a href="#care">Про простір</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+
+      <div class="header-right">
+        <a class="header-phone js-magnetic" href="tel:+380772210001">Для запису: 077 221 00 01</a>
+        <button
+          class="burger-btn"
+          id="mobileMenuBtn"
+          type="button"
+          aria-label="Відкрити меню"
+          aria-expanded="false"
+          aria-controls="mobileDrawer"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="container mobile-drawer__inner">
+        <nav class="mobile-drawer__nav" aria-label="Мобільна навігація">
+          <a href="#works" class="js-mobile-link">Роботи</a>
+          <a href="#price" class="js-mobile-link">Послуги та прайс</a>
+          <a href="#care" class="js-mobile-link">Про простір</a>
+          <a href="#contacts" class="js-mobile-link">Контакти</a>
+        </nav>
+        <div class="mobile-drawer__contacts">
+          <span class="mobile-drawer__meta">Щодня 09:00 – 20:00 · вул. Віталія Вергая, Черкаси</span>
+          <a class="mobile-drawer__phone" href="tel:+380772210001">Для запису: +38 (077) 221-00-01</a>
+          <a
+            class="mobile-drawer__ig"
+            href="https://www.instagram.com/tvoya_beauty__/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram @tvoya_beauty__
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__location hero-anim" style="--d: 0ms">Черкаси · ПЗР · вул. Віталія Вергая</p>
+          <h1 class="hero__title hero-anim" style="--d: 90ms">НадихаYOU — тихий простір твоєї краси</h1>
+          <p class="hero__desc hero-anim" style="--d: 180ms">
+            Макіяж і навчання, брови, стрижки та догляд за волоссям, фарбування, зачіски,
+            манікюр, педикюр та апаратний масаж DRUMROLL V-03.
+          </p>
+
+          <div class="hero__booking hero-anim js-magnetic" style="--d: 270ms">
+            <span class="hero__booking-label">Для запису на процедуру</span>
+            <a class="hero__booking-phone" href="tel:+380772210001">+38 (077) 221-00-01</a>
+            <span class="hero__booking-meta">Щодня 09:00 – 20:00 · або у Direct @tvoya_beauty__</span>
+          </div>
+        </div>
+
+        <div class="hero__photo hero-photo-anim">
+          <img
+            id="heroPhotoImg"
+            src="./assets/ig-interior.png"
+            alt="Інтерʼєр салону краси TVOYA BEAUTY у Черкасах"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Роботи з нашого Instagram</h2>
+          <p class="section__note">Реальні кадри із салону @tvoya_beauty__</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section--porcelain" id="price">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Послуги та прайс</h2>
+          <p class="section__note">Актуальні ціни салону</p>
+        </div>
+
+        <div class="tabs-wrap" data-reveal>
+          <div class="tabs" id="categoryTabs" role="tablist" aria-label="Категорії послуг"></div>
+          <span class="tabs__indicator" id="tabIndicator" aria-hidden="true"></span>
+        </div>
+        <div class="price-groups" id="priceGroups"></div>
+
+        <div class="price-callout" data-reveal>
+          <p class="price-callout__text">
+            Для запису та підбору зручного часу телефонуйте адміністратору (щодня 09:00 – 20:00):
+          </p>
+          <a class="price-callout__phone" href="tel:+380772210001">+38 (077) 221-00-01</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="care">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Деталі, які мають значення</h2>
+        </div>
+
+        <div class="standards-grid">
+          <div class="standard-item" data-reveal style="--reveal-delay: 0ms">
+            <h3 class="standard-item__title">Стерильність PRO CARE</h3>
+            <p class="standard-item__text">
+              Сухожарова стерилізація інструментів MicroSTOP ГП-15 PRO при 160–200 °C та зберігання в індивідуальних крафт-пакетах.
+            </p>
+          </div>
+          <div class="standard-item" data-reveal style="--reveal-delay: 110ms">
+            <h3 class="standard-item__title">Професійний догляд</h3>
+            <p class="standard-item__text">
+              Відновлюючі процедури для волосся на брендах MEDAVITA, TOKIO INKARAMI та VIART.
+            </p>
+          </div>
+          <div class="standard-item" data-reveal style="--reveal-delay: 220ms">
+            <h3 class="standard-item__title">Black Friday · DRUMROLL V-03</h3>
+            <p class="standard-item__text">
+              З 23 по 30 листопада при купівлі курсу з 7 або 10 процедур апаратного масажу — ще одна процедура у подарунок.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--pastel" id="contacts">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Контакти для запису</h2>
+        </div>
+
+        <div class="contacts-grid">
+          <div data-reveal style="--reveal-delay: 0ms">
+            <span class="contact-block__label">Телефон для запису</span>
+            <a class="contact-block__value contact-block__value--link" href="tel:+380772210001">+38 (077) 221-00-01</a>
+            <span class="contact-block__sub">Натисніть на номер, щоб зателефонувати</span>
+          </div>
+
+          <div data-reveal style="--reveal-delay: 110ms">
+            <span class="contact-block__label">Адреса та графік</span>
+            <span class="contact-block__value">вул. Віталія Вергая</span>
+            <span class="contact-block__sub">м. Черкаси, ПЗР, 18000 · щодня 09:00 – 20:00</span>
+          </div>
+
+          <div data-reveal style="--reveal-delay: 220ms">
+            <span class="contact-block__label">Instagram</span>
+            <a
+              class="contact-block__value contact-block__value--link"
+              href="https://www.instagram.com/tvoya_beauty__/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @tvoya_beauty__
+            </a>
+            <span class="contact-block__sub">Роботи майстрів, сторіс та Direct</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>TVOYA BEAUTY · Черкаси</span>
+      <span>Для запису: <a href="tel:+380772210001">+38 (077) 221-00-01</a></span>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Quick-Call Bar -->
+  <div class="mobile-call-bar">
+    <div class="mobile-call-bar__info">
+      <span class="mobile-call-bar__label">Для запису · 09:00–20:00</span>
+      <span class="mobile-call-bar__addr">Черкаси, ПЗР</span>
+    </div>
+    <a class="mobile-call-bar__link" href="tel:+380772210001">077 221 00 01</a>
+  </div>
+
+  <!-- Minimalist Photo Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Перегляд фото">
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <button class="lightbox__close" type="button" data-lightbox-close aria-label="Закрити">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" id="lightboxPrev" aria-label="Попереднє фото">‹</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" id="lightboxNext" aria-label="Наступне фото">›</button>
+  </div>
+
+  <script src="./data/services.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
